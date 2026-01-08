@@ -1,14 +1,13 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
 import WhatsAppButton from "@/components/whatsapp-button"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { Mail, Phone, MapPin, Clock } from "lucide-react"
+import { Mail, Phone, MapPin, Clock, MessageCircle } from "lucide-react"
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -31,8 +30,17 @@ export default function ContactPage() {
     e.preventDefault()
     // Simple validation
     if (formData.name && formData.phone && formData.email && formData.message) {
+      // WhatsApp integration - send form data to WhatsApp
+      const whatsappNumber = "+919108125835"
+      const whatsappMessage = `New Contact Form Submission:\n\nName: ${formData.name}\nPhone: ${formData.phone}\nEmail: ${formData.email}\nMessage: ${formData.message}`
+      const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`
+      
+      // Open WhatsApp with the form data
+      window.open(whatsappUrl, '_blank')
+      
       setSubmitted(true)
       setFormData({ name: "", phone: "", email: "", message: "" })
+      
       // Reset success message after 3 seconds
       setTimeout(() => setSubmitted(false), 3000)
     }
@@ -44,6 +52,20 @@ export default function ContactPage() {
 
   const handleEmail = () => {
     window.location.href = "mailto:attalgoldhairline@gmail.com"
+  }
+
+  const handleWhatsAppDirect = () => {
+    const whatsappNumber = "+919108125835"
+    const whatsappMessage = "Hello, I'm interested in your hair services. Can I get more information?"
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`
+    window.open(whatsappUrl, '_blank')
+  }
+
+  const handleWhatsAppLocation = () => {
+    const whatsappNumber = "+919108125835"
+    const locationMessage = "Hello, I need directions to your clinic at:\nSector No 4, Plot No 20 & 21\nNear Government Hospital Chouk\nVidyagiri Road, Nav Nagar, Bagalkot"
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(locationMessage)}`
+    window.open(whatsappUrl, '_blank')
   }
 
   return (
@@ -69,7 +91,7 @@ export default function ContactPage() {
               <h2 className="text-3xl font-serif font-bold mb-8">Send us a Message</h2>
               {submitted && (
                 <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
-                  <p className="text-green-700 font-semibold">Thank you! We'll get back to you shortly.</p>
+                  <p className="text-green-700 font-semibold">Thank you! Opening WhatsApp with your message...</p>
                 </div>
               )}
               <form onSubmit={handleSubmit} className="space-y-4">
@@ -121,9 +143,22 @@ export default function ContactPage() {
                     required
                   ></textarea>
                 </div>
-                <Button type="submit" className="w-full bg-primary hover:bg-primary/90">
-                  Send Message
-                </Button>
+                <div className="grid grid-cols-2 gap-4">
+                  <Button type="submit" className="bg-primary hover:bg-primary/90">
+                    Send via WhatsApp
+                  </Button>
+                  <Button 
+                    type="button"
+                    onClick={handleWhatsAppDirect}
+                    className="bg-green-600 hover:bg-green-700"
+                  >
+                    <MessageCircle className="w-4 h-4 mr-2" />
+                    Quick Chat
+                  </Button>
+                </div>
+                <p className="text-sm text-foreground/60 text-center">
+                  Your message will be sent directly to our WhatsApp for faster response
+                </p>
               </form>
             </div>
 
@@ -159,7 +194,7 @@ export default function ContactPage() {
                   </div>
                 </Card>
 
-                <Card className="p-6">
+                <Card className="p-6 hover:shadow-lg transition-shadow cursor-pointer" onClick={handleWhatsAppLocation}>
                   <div className="flex items-start gap-4">
                     <div className="p-3 bg-secondary/10 rounded-lg">
                       <MapPin className="w-6 h-6 text-secondary" />
@@ -175,6 +210,7 @@ export default function ContactPage() {
                         <br />
                         Bagalkot
                       </p>
+                      <p className="text-sm text-foreground/70 mt-1">Click for WhatsApp directions</p>
                     </div>
                   </div>
                 </Card>
@@ -209,6 +245,17 @@ export default function ContactPage() {
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>
+              </div>
+              
+              {/* WhatsApp Quick Action Button */}
+              <div className="mt-6">
+                <Button 
+                  onClick={handleWhatsAppDirect}
+                  className="w-full bg-green-600 hover:bg-green-700 py-6 text-lg"
+                >
+                  <MessageCircle className="w-5 h-5 mr-3" />
+                  Chat on WhatsApp for Instant Response
+                </Button>
               </div>
             </div>
           </div>
