@@ -25,7 +25,7 @@ export default function Navigation() {
             <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
               <span className="text-white font-bold text-lg font-serif">A</span>
             </div>
-            <span className="hidden sm:inline font-serif font-bold text-lg text-foreground">Attal Gold Hair Line</span>
+            <span className=":inline font-serif font-bold text-lg text-foreground">Attal Gold Hair Line</span>
           </Link>
 
           {/* Desktop Navigation */}

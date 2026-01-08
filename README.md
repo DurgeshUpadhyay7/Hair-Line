@@ -1,30 +1,146 @@
-# Attal Gold Hair website
+🏥 Attal Gold Hair Line – Hair Clinic Website
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+A modern, responsive, and professional hair clinic website built using Next.js (App Router) and Tailwind CSS, designed for Attal Gold Hair Line.
+The website highlights clinic services, gallery, before–after results, and enables easy WhatsApp contact.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/durgeshup727598-4269s-projects/v0-attal-gold-hair-website)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/oZN6ASn90Bd)
+🚀 Features
 
-## Overview
+✅ Modern & premium UI
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+✅ Fully responsive (Mobile / Tablet / Desktop)
 
-## Deployment
+✅ Separate pages (Home, About, Services, Gallery, Before–After, Contact)
 
-Your project is live at:
+✅ Image Gallery with Click-to-Zoom modal
 
-**[https://vercel.com/durgeshup727598-4269s-projects/v0-attal-gold-hair-website](https://vercel.com/durgeshup727598-4269s-projects/v0-attal-gold-hair-website)**
+✅ Video support inside gallery
 
-## Build your app
+✅ Floating WhatsApp animated button on all pages
 
-Continue building your app on:
+✅ Clean SEO-friendly structure
 
-**[https://v0.app/chat/oZN6ASn90Bd](https://v0.app/chat/oZN6ASn90Bd)**
+✅ Fast loading & optimized assets
 
-## How It Works
+🛠 Tech Stack
 
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+Framework: Next.js (App Router)
+
+Styling: Tailwind CSS
+
+Icons: Lucide React
+
+Language: TypeScript / JavaScript
+
+Deployment Ready: Vercel
+
+📁 Project Folder Structure
+/app
+ ├── page.tsx
+ ├── gallery/
+ │    └── page.tsx
+ ├── before-after/
+ │    └── page.tsx
+ ├── contact/
+ │    └── page.tsx
+/components
+ ├── navigation.tsx
+ ├── footer.tsx
+ ├── whatsapp-button.tsx
+/public
+ ├── gallery/
+ │    ├── 1.jpeg
+ │    ├── 2.jpeg
+ │    ├── 3.jpeg
+ │    ├── 4.jpeg
+ │    ├── 5.jpeg
+ │    └── 1.mp4
+ ├── before-after/
+ │    ├── case-1.jpg
+ │    ├── case-2.jpg
+ │    └── ...
+
+🖼 Gallery Details
+
+Displays 5 images (1.jpeg → 5.jpeg)
+
+Displays 1 video (1.mp4)
+
+Images open in fullscreen zoom modal
+
+Videos play with native controls
+
+📲 WhatsApp Integration
+
+Floating WhatsApp button visible on all pages
+
+On click → Opens WhatsApp chat
+
+Prefilled message for appointment booking
+
+Example:
+
+Hello Attal Gold Hair Line, I want to book an appointment.
+
+🧑‍⚕️ Business Information
+
+Company Name: Attal Gold Hair Line
+Owner: Kirti Nagaraj Hiremath
+Location: Nav Nagar, Bagalkot
+Address:
+Sector No 4, Plot No 20 & 21,
+Near Government Hospital Chouk,
+Vidyagiri Road, Nav Nagar, Bagalkot
+
+Email: attalgoldhairline@gmail.com
+
+Mobile: +91 9108125835
+
+▶️ Getting Started (Local Setup)
+
+Clone the repository
+
+git clone <your-repo-url>
+
+
+Install dependencies
+
+npm install
+
+
+Run development server
+
+npm run dev
+
+
+Open in browser
+
+http://localhost:3000
+
+🌐 Deployment
+
+This project is optimized for Vercel.
+
+Steps:
+
+Push code to GitHub
+
+Connect repository to Vercel
+
+Deploy 🚀
+
+✨ Future Enhancements
+
+Admin panel for gallery uploads
+
+CMS integration
+
+Testimonials section
+
+Online appointment booking form
+
+Google Maps advanced embed
+
+📄 License
+
+This project is for Attal Gold Hair Line.
+All rights reserved © 2026.

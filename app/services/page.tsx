@@ -1,13 +1,10 @@
+"use client"
+
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
 import WhatsAppButton from "@/components/whatsapp-button"
 import { Button } from "@/components/ui/button"
 import { CheckCircle } from "lucide-react"
-
-export const metadata = {
-  title: "Services - Attal Gold Hair Line",
-  description: "Explore our comprehensive hair treatment and restoration services in Bagalkot.",
-}
 
 const services = [
   {
@@ -20,7 +17,7 @@ const services = [
       "Long-lasting results",
       "Painless procedure",
     ],
-    image: "/placeholder.svg?key=yovgc",
+    image: "/patch.jpg",
   },
   {
     title: "Hair Fixing (Non-Surgical)",
@@ -32,7 +29,7 @@ const services = [
       "Natural movement",
       "Various style options",
     ],
-    image: "/placeholder.svg?key=ewf9d",
+    image: "/Fixing.jpg",
   },
   {
     title: "Hair Treatment",
@@ -44,7 +41,7 @@ const services = [
       "Visible results",
       "Safe and natural",
     ],
-    image: "/placeholder.svg?key=g6wan",
+    image: "/Treatment.jpg",
   },
   {
     title: "Hair Loss Solution",
@@ -56,13 +53,13 @@ const services = [
       "Proven effectiveness",
       "Affordable packages",
     ],
-    image: "/placeholder.svg?key=4ksom",
+    image: "/Loss.jpg",
   },
   {
     title: "Scalp Treatment",
     description: "Complete scalp health and care solutions",
     benefits: ["Deep cleansing", "Reduces dandruff", "Improves circulation", "Strengthens roots", "Long-term health"],
-    image: "/placeholder.svg?key=15q1g",
+    image: "/Scalp.jpg",
   },
   {
     title: "Hair Care Consultation",
@@ -74,11 +71,19 @@ const services = [
       "Ongoing support",
       "Free follow-ups",
     ],
-    image: "/placeholder.svg?key=2gmms",
+    image: "/Care.jpg",
   },
 ]
 
 export default function ServicesPage() {
+  const whatsappNumber = "+919108125835"
+  const whatsappMessage = "Hello, I'm interested in your hair services. Can I get more information?"
+
+  const handleWhatsAppClick = () => {
+    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`
+    window.open(url, '_blank')
+  }
+
   return (
     <main className="min-h-screen bg-background">
       <Navigation />
@@ -127,7 +132,12 @@ export default function ServicesPage() {
                     ))}
                   </div>
 
-                  <Button className="bg-primary hover:bg-primary/90">Learn More</Button>
+                  <Button 
+                    className="bg-primary hover:bg-primary/90"
+                    onClick={handleWhatsAppClick}
+                  >
+                    Contact on WhatsApp
+                  </Button>
                 </div>
               </div>
             ))}
@@ -139,8 +149,12 @@ export default function ServicesPage() {
             <p className="text-foreground/70 mb-6 max-w-2xl mx-auto">
               Book a free consultation with our experts and discover the best treatment for your needs.
             </p>
-            <Button size="lg" className="bg-primary hover:bg-primary/90">
-              Schedule Consultation
+            <Button 
+              size="lg" 
+              className="bg-primary hover:bg-primary/90"
+              onClick={handleWhatsAppClick}
+            >
+              Schedule Consultation on WhatsApp
             </Button>
           </div>
         </div>

@@ -20,24 +20,7 @@ export const metadata: Metadata = {
   title: "Attal Gold Hair Line - Advanced Hair Treatment in Bagalkot",
   description:
     "Premium hair treatment and hair restoration clinic in Bagalkot. Advanced technology, natural results, trusted hair experts.",
-  generator: "v0.app",
-  icons: {
-    icon: [
-      {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
-      },
-    ],
-    apple: "/apple-icon.png",
-  },
+
 }
 
 export default function RootLayout({
